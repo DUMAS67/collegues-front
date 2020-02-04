@@ -1,0 +1,32 @@
+<div class="row">
+  <div class=" col-12 col-md-3">
+    <img [src]="col.photoUrl">
+  </div>
+
+  <div class="col-12 col-md-9">
+    <ul>
+      <li>
+        Matricule : {{col.matricule}}
+      </li>
+      <li>
+        Nom: {{col.nom}}
+      </li>
+      <li>
+        Prenom: {{col.prenom}}
+      </li>
+      <li>
+        Mail: {{col.email}}
+      </li>
+      <li>
+        DateNaissance: {{col.dateDeNaissance}}
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class = "col offset-3">
+    <p><button class="btn btn-link"(click)="creer()">Créer un nouveau collègue</button>
+      <p><button class="btn btn-primary" (click)="modifier()">Modifier</button>
+  </div>
+</div>
