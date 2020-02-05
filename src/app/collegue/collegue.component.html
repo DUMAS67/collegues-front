@@ -9,24 +9,40 @@
         Matricule : {{col.matricule}}
       </li>
       <li>
-        Nom: {{col.nom}}
+        Nom: {{col.nom | uppercase}}
       </li>
       <li>
         Prenom: {{col.prenom}}
       </li>
-      <li>
-        Mail: {{col.email}}
+      <li> DateNaissance: {{col.dateDeNaissance | date :'dd/MM/yyyy'}}</li>
+
+
+      <li *ngIf="!clickM;else mailInput">Mail: {{col.email}}
       </li>
-      <li>
-        DateNaissance: {{col.dateDeNaissance}}
+      <ng-template #mailInput>
+        <li>Mail : <input type="text" [value]="col.email" ></li>
+      </ng-template>
+
+      <li *ngIf="!clickM;else urlInput">Photo Url: {{col.photoUrl}}
       </li>
+      <ng-template #urlInput>
+        <li>Photo Url : <input type="text" [value]="col.photoUrl"></li>
+      </ng-template>
     </ul>
   </div>
 </div>
 
 <div class="row">
-  <div class = "col offset-3">
-    <p><button class="btn btn-link"(click)="creer()">Créer un nouveau collègue</button>
-      <p><button class="btn btn-primary" (click)="modifier()">Modifier</button>
+  <div class="col offset-3">
+    <p *ngIf="!clickM;"><button class="btn btn-link" (click)="creer()">Créer un nouveau collègue</button>
+      <p *ngIf="!clickM; else buton"><button class="btn btn-primary" (click)="modifier()">Modifier</button>
+      </p>
+
+      <ng-template #buton>
+        <div class = "col offset-2">
+        <button class="btn btn-primary" (click)="valider()">valider</button>
+      </div>
+      </ng-template>
+
   </div>
 </div>

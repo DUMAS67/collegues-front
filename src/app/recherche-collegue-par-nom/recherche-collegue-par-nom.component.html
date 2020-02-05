@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-2">
+    <label for="staticEmail2" class="sr-only">Email</label>
+    <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="Recherche par nom">
+  </div>
+  <div class="col-offset-1 col-3">
+    <label for="inputNom" class="sr-only">Nom</label>
+    <input type="text" class="form-control" id="inputNom" placeholder="Nom" #saisie>
+  </div>
+  <div class="col-offset-2">
+    <p><button type="text" (click)="rechercher(saisie.value)" class="btn btn-primary mb-2">Rechercher</button></p>
+  </div>
+
+</div>
+<div class = "row">
+  <ul>
+    <li *ngFor="let item of listeMatricule">{{item}}</li>
+  </ul>
+  </div>
