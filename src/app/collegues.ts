@@ -1,5 +1,11 @@
 export class Collegue {
+  [x: string]: any;
 
-constructor(private matricule: string,
-            private nom: string, private prenom: string, private email: string, private dateDeNaissance: Date, private photoUrl: string) {}
+  constructor(
+    matricule: string,
+    nom: string,
+    prenom: string,
+    email: string,
+    dateDeNaissance: Date,
+    photoUrl: string) { }
 }

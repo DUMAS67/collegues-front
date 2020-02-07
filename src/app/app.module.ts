@@ -6,16 +6,21 @@ import { AppComponent } from './app.component';
 import { CollegueComponent } from './collegue/collegue.component';
 import { RechercheCollegueParNomComponent } from './recherche-collegue-par-nom/recherche-collegue-par-nom.component';
 import { HttpClientModule } from '@angular/common/http'; // permet de faire des requetes http
+import { FormsModule } from '@angular/forms';
+import { CreerCollegueComponent } from './creer-collegue/creer-collegue.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     CollegueComponent,
-    RechercheCollegueParNomComponent
+    RechercheCollegueParNomComponent,
+    CreerCollegueComponent
   ],
   imports: [NgbModule,
     BrowserModule,
-    HttpClientModule // à introduire pour pouvoir faire des requetes http
+    HttpClientModule, // à introduire pour pouvoir faire des requetes http
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

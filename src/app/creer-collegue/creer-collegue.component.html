@@ -1,0 +1,32 @@
+
+
+<form  #etatForm="ngForm">
+  {{collegueACreer|json}}
+<div>
+  <input type ="text" name="nom" [(ngModel)]="collegueACreer.nom">
+</div>
+
+<div>
+  <input type ="text" name="prenom" [(ngModel)]="collegueACreer.prenom">
+</div>
+<div>
+  <input type ="date" name="dateDeNaissance" [(ngModel)]="collegueACreer.dateDeNaissance">
+</div>
+
+<div>
+  <input type ="email" name="email" [(ngModel)]="collegueACreer.email">
+</div>
+<div>
+  <input type ="url" name="photUrl" [(ngModel)]="collegueACreer.photUrl">
+</div>
+
+
+
+
+
+<div>
+  <button (click)="creerCollegue()">Créer</button>
+</div>
+
+</form>
+

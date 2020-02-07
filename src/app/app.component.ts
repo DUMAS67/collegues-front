@@ -7,5 +7,5 @@ import { collegueMock } from './mock/collegues.mock';
 })
 export class AppComponent {
   title = 'bonjour-angular';
-  collegueTest = collegueMock;
+  //collegueTest = collegueMock; valeur du paramètre dans le cas <app-collegue[col]="CollegueTest"
 }
