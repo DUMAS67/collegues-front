@@ -1,0 +1,36 @@
+
+{{col|async|json}}
+<div class="row">
+  <div class=" col-12 col-md-3">
+    <img [src]='col.photoUrl'>
+  </div>
+
+  <div class="col-12 col-md-9">
+    <ul>
+      <li>
+        Matricule : {{col.matricule}}
+      </li>
+      <li>
+        Nom: {{col | async|json|uppercase}}
+      </li>
+      <li>
+        Prenom: {{col.prenom}}
+      </li>
+      <li> DateNaissance: {{col.dateDeNaissance | date :'dd/MM/yyyy'}}</li>
+
+
+      <li *ngIf="!clickM;else mailInput">Mail: {{col.email}}
+      </li>
+      <ng-template #mailInput>
+        <li>Mail : <input type="text" [value]="col.email" ></li>
+      </ng-template>
+
+      <li *ngIf="!clickM;else urlInput">Photo Url: {{col.photoUrl}}
+      </li>
+      <ng-template #urlInput>
+        <li>Photo Url : <input type="text" [value]="col.photoUrl"></li>
+      </ng-template>
+    </ul>
+  </div>
+</div>
+

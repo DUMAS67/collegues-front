@@ -8,19 +8,32 @@ import { RechercheCollegueParNomComponent } from './recherche-collegue-par-nom/r
 import { HttpClientModule } from '@angular/common/http'; // permet de faire des requetes http
 import { FormsModule } from '@angular/forms';
 import { CreerCollegueComponent } from './creer-collegue/creer-collegue.component';
+import { Routes, RouterModule } from '@angular/router';
+import { MenuComponent } from './menu/menu.component';
+import { GallerieComponent } from './gallerie/gallerie.component';
+import { InfoCollegueComponent } from './info-collegue/info-collegue.component';
 
-
+const ROUTES: Routes = [
+  { path: 'accueil', component: CollegueComponent }, // /page1 ->
+  { path: 'gallerie', component: GallerieComponent },
+  { path: 'detailCollegue/:matricule', component: InfoCollegueComponent},
+  { path: '', redirectTo: 'page1', pathMatch: 'full'}
+];
 @NgModule({
   declarations: [
     AppComponent,
     CollegueComponent,
     RechercheCollegueParNomComponent,
-    CreerCollegueComponent
+    CreerCollegueComponent,
+    MenuComponent,
+    GallerieComponent,
+    InfoCollegueComponent
   ],
   imports: [NgbModule,
     BrowserModule,
     HttpClientModule, // à introduire pour pouvoir faire des requetes http
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [],
   bootstrap: [AppComponent]

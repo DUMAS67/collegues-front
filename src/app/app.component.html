@@ -1,11 +1,30 @@
-<h1>Visualisation du Collègue</h1>
-<div class="row">
+<header>
+
+  <h1 class="text-center">Administration Collegue</h1>
+  <nav>
+    <app-menu></app-menu>
+  </nav>
+</header>
+
+<!--div-- class="row">
   <div class="col">
     <app-creer-collegue></app-creer-collegue>
     <!--app-recherche-collegue-par-nom--><!--app-recherche-collegue-par-nom-->
-  </div>
+  <!--/div>
   <div class="col">
     <app-collegue></app-collegue>
     <!--app-collegue-- [col]="collegueTest"--><!--/app-collegue-->
-  </div>
-</div>
+  <!--/div>
+  </div-->
+
+<!-- partie dynamique -->
+<router-outlet></router-outlet>
+
+<footer>
+  <h1 class="text-center">FOOTER</h1>
+</footer>
+
+
+
+
+

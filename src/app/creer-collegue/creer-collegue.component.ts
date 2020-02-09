@@ -3,8 +3,7 @@ import { Collegue } from '../collegues';
 
 @Component({
   selector: 'app-creer-collegue',
-  templateUrl: './creer-collegue.component.html',
-  styleUrls: ['./creer-collegue.component.css']
+  templateUrl: './creer-collegue.component.html'
 })
 export class CreerCollegueComponent implements OnInit {
 

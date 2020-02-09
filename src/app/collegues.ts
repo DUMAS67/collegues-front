@@ -1,5 +1,4 @@
 export class Collegue {
-  [x: string]: any;
 
   constructor(
     matricule: string,
@@ -9,3 +8,4 @@ export class Collegue {
     dateDeNaissance: Date,
     photoUrl: string) { }
 }
+

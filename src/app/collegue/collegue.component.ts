@@ -11,7 +11,7 @@ export class CollegueComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   clickM = false;
-  col: Collegue;
+  col: Collegue = {};
   creer() {
     console.log('Vous avez créer un Collègue');
   }
@@ -28,6 +28,7 @@ export class CollegueComponent implements OnInit {
     this.dataService.subjectColNew.subscribe(
       colNew => {
         this.col = colNew;
+        console.log(colNew);
       }
     );
   }
