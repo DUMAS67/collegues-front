@@ -13,14 +13,16 @@ export class InfoCollegueComponent implements OnInit {
 
   constructor(private router: ActivatedRoute, private dataService: DataService) { }
 
-  col: Observable<Collegue>;
+  col: Collegue = {};
   ngOnInit() {
 
     this.router.paramMap.subscribe((paramMap) => {
 
       const matricule = paramMap.get('matricule');
 
-      this.col = this.dataService.rechercherCollegueMatricule(matricule);
+      this.dataService.rechercherCollegueMatricule(matricule).subscribe((collegues: Collegue) => {
+        this.col = collegues;
+      });
 
     });
     console.log(this.col);

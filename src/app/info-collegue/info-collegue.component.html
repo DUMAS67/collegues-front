@@ -1,8 +1,8 @@
 
-{{col|async|json}}
+
 <div class="row">
   <div class=" col-12 col-md-3">
-    <img [src]='col.photoUrl'>
+    <img [src]='col.photoUrl' style="width: 200px; height: 180px">
   </div>
 
   <div class="col-12 col-md-9">
@@ -11,25 +11,14 @@
         Matricule : {{col.matricule}}
       </li>
       <li>
-        Nom: {{col | async|json|uppercase}}
+        Nom: {{col.nom |uppercase}}
       </li>
       <li>
-        Prenom: {{col.prenom}}
+        Prenom: {{col.prenoms}}
       </li>
       <li> DateNaissance: {{col.dateDeNaissance | date :'dd/MM/yyyy'}}</li>
-
-
-      <li *ngIf="!clickM;else mailInput">Mail: {{col.email}}
-      </li>
-      <ng-template #mailInput>
-        <li>Mail : <input type="text" [value]="col.email" ></li>
-      </ng-template>
-
-      <li *ngIf="!clickM;else urlInput">Photo Url: {{col.photoUrl}}
-      </li>
-      <ng-template #urlInput>
-        <li>Photo Url : <input type="text" [value]="col.photoUrl"></li>
-      </ng-template>
+      <li> Mail: {{col.email}}</li>
+      <li> Photo Url: {{col.photoUrl}} </li>
     </ul>
   </div>
 </div>
